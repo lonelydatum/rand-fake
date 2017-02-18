@@ -1,0 +1,6 @@
+.main {
+  max-width: 900px;
+  min-width: 500px;
+  border: 1px solid green;
+  margin: 0 auto;
+}

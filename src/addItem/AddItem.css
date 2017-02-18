@@ -1,0 +1,19 @@
+.main {
+	display: flex;
+	margin-bottom: 10px;
+	justify-content: space-between;
+}
+
+.share {
+
+}
+
+
+.label {
+	composes: label from '../common/common.css';
+
+}
+
+.addButton {
+	composes: button from '../common/common.css';
+}

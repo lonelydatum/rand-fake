@@ -1,0 +1,28 @@
+.main {
+	display: flex;
+
+	margin-bottom: 10px;
+	justify-content: space-between;
+
+}
+
+
+
+
+.percent {
+	border: 1px solid red;
+}
+
+
+.buttons {
+	display: flex;
+}
+
+.edit {
+	composes: button from '../common/common.css';
+	margin-right: 5px;
+}
+
+.delete {
+	composes: button from '../common/common.css';
+}

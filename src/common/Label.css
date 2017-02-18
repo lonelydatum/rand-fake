@@ -1,0 +1,12 @@
+.main {
+	flex-basis: 200px;
+	margin-right: 10px;
+}
+
+.label {
+	composes: label from '../common/common.css';
+}
+
+.label:focus {
+	background-color: #CCC;
+}

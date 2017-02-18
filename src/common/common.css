@@ -1,0 +1,20 @@
+.item {
+
+}
+
+.label {
+	border: 2px solid blue;
+	font-size: 22px;
+	padding: 5px;
+}
+
+.button {
+	border: 1px solid black;
+	padding: 3px 12px;
+
+	text-transform: uppercase;
+	cursor: pointer;
+	background-color: white;
+}
+
+
