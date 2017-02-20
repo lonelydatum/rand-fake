@@ -2,6 +2,12 @@ import { autorun } from "mobx"
 
 class LocalBin {
 
+	constructor() {
+		if(this.list === null) {
+			this.list = []
+		}
+	}
+
 	addStore(store) {
 		autorun(()=>{
 			this.list = store.listBrute

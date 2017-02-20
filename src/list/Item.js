@@ -51,8 +51,13 @@ export default class Item extends Component {
 				</LabelPercent>
 
 				<div className={styles.buttons}>
-					<button className={styles.edit} onClick={this.onEdit.bind(this)}>edit</button>
-					<button className={styles.delete} onClick={this.onDelete.bind(this)}>delete</button>
+					<button className={styles.edit} onClick={this.onEdit.bind(this)}>
+						<i className="fa fa-pencil" aria-hidden="true"></i>
+					</button>
+					<button className={styles.delete} onClick={this.onDelete.bind(this)}>
+						<i className="fa fa-trash-o" aria-hidden="true"></i>
+					</button>
+
 				</div>
 			</div>
 		);

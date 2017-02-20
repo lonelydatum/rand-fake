@@ -1,0 +1,37 @@
+.main {
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.svgHolder {
+	width: 500px;
+	height: 500px;
+	position: relative;
+}
+
+
+
+.needle {
+	transform-origin: 0 0;
+	width: 300px;
+	/*height: 30px;*/
+	top: 250px;
+	left: 250px;
+	/*background-color: hotpink;*/
+	position: absolute;
+	transition: all 1s ease;
+}
+
+.needle img {
+	/*border: 1px solid orange;*/
+	transform: translate(-80px, -50px);
+}
+
+.spinButton{
+	width: 200px;
+	height: 80px;
+	margin: 50px;
+}

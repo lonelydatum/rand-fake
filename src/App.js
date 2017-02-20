@@ -24,11 +24,13 @@ export default class TodoList extends React.Component {
     return (
       <Provider store={store}>
         <div className={styles.main}>
-            <div>
+            <div className={styles.rawData}>
                 <AddItem />
                 <List />
             </div>
-            <Pie/>
+            <div className={styles.viz}>
+              <Pie/>
+            </div>
         </div>
       </Provider>
       )

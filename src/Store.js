@@ -10,6 +10,7 @@ class Item {
     this.id = id
     this.label = label
     this.percent = percent
+    this.percent100 = 0
   }
 }
 
@@ -32,14 +33,25 @@ class Store {
 
   @computed get listBrute() {
 
+    let count = 0
+    this.list.map(item=>{
+      count += item.percent
+      return item
+    })
+
+
+
     return this.list.map((item)=>{
       /* eslint-disable */
       const a = item.label
       const b = item.percent
       /* eslint-enable */
+      item.percent100 = item.percent / count
       return item
     })
   }
+
+
 
   createItem(label, percent) {
     this.list.push(new Item(label, percent, this.idCounter))
