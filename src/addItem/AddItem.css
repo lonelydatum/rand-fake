@@ -1,7 +1,19 @@
 .main {
+	/*margin-bottom: 50px;*/
+
+	padding: 50px 10px;
+	background-color: black;
+	box-shadow: 0px 9px 4px rgba(0,0,0,0.5);
+}
+
+.holder {
+	/*padding-top: 33px;*/
+}
+
+.ui {
 	display: flex;
-	margin-bottom: 10px;
 	justify-content: space-between;
+	margin-top: 8px;
 }
 
 .share {
@@ -16,4 +28,23 @@
 
 .addButton {
 	composes: button from '../common/common.css';
+	width: 85px;
+}
+
+.main input {
+	/*border: 2px solid black;*/
+
+}
+
+.addYour {
+	pointer-events: none;
+	font-size: 12px;
+	text-transform: uppercase;
+	display: flex;
+	/*position: absolute;*/
+	transform: translate(9px, 29px);
+}
+
+.addYour p {
+	padding-right: 6px;
 }

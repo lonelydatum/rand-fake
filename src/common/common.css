@@ -1,20 +1,31 @@
+@value colors: "./colors.css";
+@value raw_color from colors;
+
 .item {
 
 }
 
 .label {
-	border: 2px solid black;
+	/*border: 2px solid black;*/
 	font-size: 16px;
-	padding: 5px;
+	padding: 5px 7px 2px 7px;
+	color: raw_color;
+	width: 160px;
+	margin-right: 10px;
+	border-color: raw_color;
+	border-width: 2px;
+	border-style: solid;
+	background-color: transparent;
 }
 
 .button {
-	border: 1px solid black;
+	border: 2px solid raw_color;
 	padding: 3px 12px;
-
+	min-width: 40px;
 	text-transform: uppercase;
 	cursor: pointer;
-	background-color: white;
+	background-color: transparent;
+	color: raw_color;
 }
 
 

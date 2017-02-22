@@ -1,0 +1,38 @@
+@value colors: './colors.css';
+@value raw_color from colors;
+
+.main {
+
+	font-size: 25px;
+
+
+	display: flex;
+
+
+	margin-top: 50px;
+	align-items: flex-start;
+	justify-content: center;
+	cursor: pointer;
+}
+
+.holder {
+	border: 2px solid red;
+	padding: 5px 25px;
+}
+
+
+.hide {
+	display: none;
+}
+
+
+
+
+.list {
+	display: flex;
+	overflow: hidden;
+}
+
+.list li {
+	position: relative;
+}

@@ -8,16 +8,26 @@ import styles from './App.css'
 import localBin from './LocalBin.js'
 import AddItem from './addItem/AddItem.js'
 
-import Pie from './piechart/Pie.js'
+import Pie from './viz/piechart/Pie.js'
+// import About from './about/About.js'
+import RandomizeButton from './common/RandomizeButton.js'
+
 
 const store = new Store()
-
-
 localBin.addStore(store)
 
-// localBin.fakeList()
 
-export default class TodoList extends React.Component {
+export default class Randomize extends React.Component {
+
+  constructor(props) {
+    super(props)
+    this.state = {selected:null}
+  }
+
+  onRandomize(result) {
+    this.setState({selected: result})
+  }
+
 
 
   render() {
@@ -27,10 +37,13 @@ export default class TodoList extends React.Component {
             <div className={styles.rawData}>
                 <AddItem />
                 <List />
+                <RandomizeButton onRandomize={this.onRandomize.bind(this)} />
             </div>
             <div className={styles.viz}>
-              <Pie/>
+              <Pie selected={this.state.selected} random={Math.random()} />
+
             </div>
+
         </div>
       </Provider>
       )

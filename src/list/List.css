@@ -1,3 +1,26 @@
 .main {
+  padding: 60px 10px;
+}
 
+
+.enter {
+  opacity: 0.01;
+  transform: translateY(30px);
+}
+
+.enter.enterActive {
+  opacity: 1;
+  transform: translateY(0px);
+  transition: 400ms;
+}
+
+.leave {
+  opacity: 1;
+  /*transform: translateY(0px);*/
+}
+
+.leave.leaveActive {
+  opacity: 0.001;
+  /*transform: translateY(-10px);*/
+  transition: 1ms;
 }

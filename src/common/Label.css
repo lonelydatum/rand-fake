@@ -1,6 +1,6 @@
 .main {
-	flex-basis: 200px;
-	margin-right: 10px;
+
+
 }
 
 .label {
@@ -8,5 +8,6 @@
 }
 
 .label:focus {
-	background-color: #CCC;
+	background-color: #3366cc;
+	outline: none;
 }

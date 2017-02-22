@@ -1,3 +1,4 @@
+
 .main {
 	display: flex;
 
@@ -26,3 +27,11 @@
 .delete {
 	composes: button from '../common/common.css';
 }
+
+.main input {
+	background-color: transparent;
+	border: none;
+	border-bottom-width: 2px;
+	border-bottom-style: solid;
+}
+

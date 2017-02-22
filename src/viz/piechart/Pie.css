@@ -1,0 +1,65 @@
+
+.shadowed {
+    -webkit-filter: drop-shadow(0px 0px 15px rgba(0,0,0,0.7));
+    filter: drop-shadow(0px 0px 15px rgba(0,0,0,0.7));
+}
+
+
+.main {
+
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.svgHolder {
+	width: 600px;
+	height: 600px;
+	position: relative;
+	/*border: 1px solid teal;*/
+}
+
+
+
+.needle {
+	transform-origin: 0 0;
+	width: 200px;
+	position: absolute;
+	transition: all 1s ease;
+	/*border: 1px solid orange;*/
+}
+
+.needleImg {
+	composes: shadowed;
+	transform: translate(-40px, -33px);
+}
+
+
+
+svg {
+
+	font-size: 18px;
+	position: relative;
+
+}
+
+
+.circle {
+	composes: shadowed;
+	opacity: .3;
+	width: 86%;
+	height: 86%;
+	background-color: white;
+	position: absolute;
+	z-index: 0;
+	border-radius: 300px;
+
+	margin-left: auto;
+	margin-right: auto;
+	left: 0;
+	right: 0;
+	top: 7%;
+	/*bottom: 5%;*/
+}
