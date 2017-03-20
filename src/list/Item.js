@@ -34,6 +34,10 @@ export default class Item extends Component {
 		const { data } = this.props
 
 
+		// if(this.props.store.editId === this.props.data.id) {
+		// 	console.log(this);
+		// }
+
 		return (
 			<div className={styles.main}>
 

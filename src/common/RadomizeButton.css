@@ -9,10 +9,11 @@
 	display: flex;
 
 
-	margin-top: 50px;
+	/*margin-top: 50px;*/
 	align-items: flex-start;
 	justify-content: center;
 	cursor: pointer;
+	transition: opacity .3s;
 }
 
 .holder {
@@ -21,10 +22,11 @@
 }
 
 
-.hide {
-	display: none;
+.mainDisable {
+	composes: main;
+	opacity: .1;
+	cursor: default;
 }
-
 
 
 

@@ -1,53 +1,43 @@
-import React from "react"
-import { Provider } from "mobx-react"
+import React, { PropTypes } from 'react';
+import { inject, observer } from "mobx-react"
 
-
-import List from './list/List.js'
-import Store from './Store.js'
 import styles from './App.css'
-import localBin from './LocalBin.js'
-import AddItem from './addItem/AddItem.js'
-
-import Pie from './viz/piechart/Pie.js'
-// import About from './about/About.js'
-import RandomizeButton from './common/RandomizeButton.js'
+import PageMeat from './PageMeat.js'
+import PageAbout from './about/PageAbout.js'
+import Menu from './menu/Menu.js'
 
 
-const store = new Store()
-localBin.addStore(store)
+@inject('store') @observer
+class App extends React.Component {
 
 
-export default class Randomize extends React.Component {
+	createPageAbout() {
+		return <PageAbout/>
+	}
 
-  constructor(props) {
-    super(props)
-    this.state = {selected:null}
-  }
-
-  onRandomize(result) {
-    this.setState({selected: result})
-  }
+	createPageMeat() {
+		return <PageMeat />
+	}
 
 
 
-  render() {
-    return (
-      <Provider store={store}>
+
+  	render() {
+  		const page = this.props.store.viz ? this.createPageMeat() : this.createPageAbout()
+
+		return (
         <div className={styles.main}>
-            <div className={styles.rawData}>
-                <AddItem />
-                <List />
-                <RandomizeButton onRandomize={this.onRandomize.bind(this)} />
-            </div>
-            <div className={styles.viz}>
-              <Pie selected={this.state.selected} random={Math.random()} />
-
-            </div>
-
+            {page}
+            <Menu/>
         </div>
-      </Provider>
-      )
-  }
-
+		);
+  	}
 }
 
+
+App.propTypes = {
+  store: PropTypes.object
+};
+
+
+export default App;

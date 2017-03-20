@@ -1,0 +1,36 @@
+@value big from '../breakpoints.css';
+
+.viz {
+	flex: 1 1 auto;
+	height: 100vh;
+	position: absolute;
+	top: 0;
+
+	transition: left .5s ease;
+	z-index: 2;
+	background-color: white;
+}
+
+.vizOpen {
+	composes: viz;
+	left: 0;
+}
+.vizClose {
+	composes: viz;
+	left: -100%;
+}
+
+@media big {
+	.viz {
+		position: relative;
+		left: inherit;
+  	}
+
+  	.vizOpen {
+		composes: viz;
+	}
+
+	.vizClose {
+		composes: viz;
+	}
+}

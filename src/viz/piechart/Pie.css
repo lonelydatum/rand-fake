@@ -1,3 +1,5 @@
+@value big from '../../breakpoints.css';
+
 
 .shadowed {
     -webkit-filter: drop-shadow(0px 0px 15px rgba(0,0,0,0.7));
@@ -6,7 +8,6 @@
 
 
 .main {
-
 	height: 100vh;
 	display: flex;
 	flex-direction: column;
@@ -15,8 +16,8 @@
 }
 
 .svgHolder {
-	width: 600px;
-	height: 600px;
+	width: 375px;
+	height: 375px;
 	position: relative;
 	/*border: 1px solid teal;*/
 }
@@ -25,10 +26,8 @@
 
 .needle {
 	transform-origin: 0 0;
-	width: 200px;
 	position: absolute;
-	transition: all 1s ease;
-	/*border: 1px solid orange;*/
+	width: 170px;
 }
 
 .needleImg {
@@ -39,18 +38,16 @@
 
 
 svg {
-
 	font-size: 18px;
 	position: relative;
-
 }
 
 
 .circle {
 	composes: shadowed;
 	opacity: .3;
-	width: 86%;
-	height: 86%;
+	width: 84%;
+	height: 84%;
 	background-color: white;
 	position: absolute;
 	z-index: 0;
@@ -60,6 +57,59 @@ svg {
 	margin-right: auto;
 	left: 0;
 	right: 0;
-	top: 7%;
-	/*bottom: 5%;*/
+	top: 8%;
+}
+
+.buttonsForMobile {
+	display: block;
+}
+
+.randomize, .close {
+	composes: buttonsForMobile;
+}
+
+.close {
+	margin-top: 22px;
+}
+
+
+.enter {
+  	opacity: 0;
+  	transform: translateX(-100%);
+}
+
+.enter.enterActive {
+  	opacity: 1;
+  	transform: translateX(0px);
+  	transition: 500ms;
+	transition-delay: 2s;
+}
+
+.leave {
+	opacity: 1;
+	transform: translateX(0px);
+}
+
+.leave.leaveActive {
+	opacity: 0;
+	transition: 500ms;
+	transform: translateX(100%);
+
+}
+
+/**/
+
+@media big {
+	.svgHolder {
+		width: 700px;
+		height: 700px;
+	}
+
+	.buttonsForMobile {
+		display: none;
+	}
+
+	.needle {
+		width: 200px;
+	}
 }

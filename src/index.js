@@ -1,13 +1,25 @@
 import React from 'react'
 import ReactDOM from "react-dom"
-import App from './App.js'
+import AppProvider from './AppProvider.js'
 import './index.css'
 
 // const list = localStorage.getItem("list")
 
+var WebFont = require('webfontloader');
+
+  WebFont.load({
+    google: {
+      families: ['Dosis', 'Bowlby One', 'Roboto Condensed']
+    },
+    active: startApp
+  });
 
 
 
-const app = document.getElementById('root');
+function startApp() {
+	const app = document.getElementById('root');
+	ReactDOM.render(<AppProvider />, app)
+}
 
-ReactDOM.render(<App />, app)
+
+// startApp()

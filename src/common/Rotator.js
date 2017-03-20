@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 
 import {TimelineMax, Back} from 'gsap'
 
@@ -32,9 +32,7 @@ export default class Rotator extends Component {
 
 	render() {
 		const cssUL = {height:this.state.height}
-		if(this.props.pause){
-			this.tl.pause()
-		}
+
 
 		return (
 			<div className={styles.main} style={cssUL}>
@@ -44,4 +42,9 @@ export default class Rotator extends Component {
 			</div>
 		);
 	}
+}
+
+
+Rotator.propTypes = {
+	list: PropTypes.array.isRequired
 }

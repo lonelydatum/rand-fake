@@ -1,12 +1,17 @@
+@value big from '../breakpoints.css';
+
+
 .main{
 	/*border: 1px solid red;*/
 	display: flex;
 	align-items: flex-end;
+	margin-right: 8px;
 
 }
 
 .hearts {
-	width: 100px;
+	font-size: 12px;
+	width: 85px;
 	display: flex;
 	cursor: pointer;
 	justify-content: space-between;
@@ -16,3 +21,9 @@
 
 }
 
+@media big {
+	.hearts {
+		width: 100px;
+		font-size: 14px;
+	}
+}

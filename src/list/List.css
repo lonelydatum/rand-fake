@@ -1,5 +1,7 @@
+@value big from '../breakpoints.css';
+
 .main {
-  padding: 60px 10px;
+  padding: 60px 8px;
 }
 
 
@@ -23,4 +25,10 @@
   opacity: 0.001;
   /*transform: translateY(-10px);*/
   transition: 1ms;
+}
+
+@media big {
+  .main {
+    padding: 60px 25px;
+  }
 }

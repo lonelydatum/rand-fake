@@ -10,7 +10,8 @@ class LocalBin {
 
 	addStore(store) {
 		autorun(()=>{
-			this.list = store.listBrute
+			this.list = store.list
+			this.viz = store.viz
 		})
 	}
 
@@ -22,9 +23,19 @@ class LocalBin {
 		localStorage.setItem("list", str)
 	}
 
+	get viz() {
+
+		return localStorage.getItem("viz")
+	}
+
+	set viz(v) {
+		localStorage.setItem("viz", v)
+	}
+
 
 	get list() {
-		return JSON.parse(localStorage.getItem("list"))
+		const li = JSON.parse(localStorage.getItem("list"))
+		return li
 	}
 
 	set list(list) {

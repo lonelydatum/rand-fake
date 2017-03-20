@@ -2,3 +2,8 @@
 	/*border: 1px solid red;*/
 	overflow: hidden;
 }
+
+.main ul{
+	display: flex;
+	flex-direction: column;
+}

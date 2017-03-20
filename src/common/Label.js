@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { inject, observer } from "mobx-react"
 
 import styles from './Label.css'
-
+import SpeechBubble from '../common/SpeechBubble.js'
 
 @inject('store') @observer
 class Label extends Component {
@@ -15,16 +15,37 @@ class Label extends Component {
 	}
 
 	componentDidUpdate(prevProps, prevState) {
-		if(this.props.isFocus){
+
+
+
+		if(this.props.isFocus) {
 			this.refs.label.focus()
 		}
 	}
 
+	componentDidMount() {
+		if(this.props.autoFocus){
+			this.refs.label.focus()
+		}
+	}
+
+	focusOut() {
+		console.log(this);
+	}
+
 
 	render() {
+
+		const speechBubble = (this.props.invalid) ? <SpeechBubble>{this.props.invalid}</SpeechBubble> : null
+
+
 		return (
 			<div className={styles.main}>
+				{speechBubble}
 				<input
+
+					onFocus={this.props.didFocus}
+					onBlur={this.props.didBlur}
 					onKeyPress={this.props.keyPressed}
 					className={styles.label}
 					ref="label"

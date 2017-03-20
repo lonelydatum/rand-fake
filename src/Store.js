@@ -1,5 +1,7 @@
 import { observable, computed } from "mobx"
 import LocalBin from './LocalBin.js'
+import weighted from 'weighted'
+import _ from 'lodash'
 
 class Item {
   @observable label
@@ -16,32 +18,48 @@ class Item {
 
 
 class Store {
-
-  @observable list = []
+  @observable __list = []
   @observable editId = -1
+  @observable results = []
+  @observable vizOpen = false
+  @observable __viz = LocalBin.viz
+  @observable showResults = false
+
 
   constructor() {
     this.idCounter = 0
     this.createList(LocalBin.list)
   }
 
-  deleteItem(id) {
-    const newList = this.list.filter(item => item.id!==id)
-    this.list.replace(newList)
-    // this.updateLocalBin()
+
+
+  @computed get isEmpty() {
+    return this.__list.length===0
   }
 
-  @computed get listBrute() {
+  @computed get latestResult() {
+    return _.last(this.results)
+  }
 
+  @computed get viz() {
+    return this.__viz
+  }
+
+  set viz(value) {
+    this.__viz = value
+  }
+
+
+  @computed get list() {
     let count = 0
-    this.list.map(item=>{
+    this.__list.map(item=>{
       count += item.percent
       return item
     })
 
 
 
-    return this.list.map((item)=>{
+    return this.__list.map((item)=>{
       /* eslint-disable */
       const a = item.label
       const b = item.percent
@@ -51,86 +69,58 @@ class Store {
     })
   }
 
-
-
-  createItem(label, percent) {
-    this.list.push(new Item(label, percent, this.idCounter))
-    this.idCounter++
-    // this.updateLocalBin()
+  createList(list) {
+    list.forEach((item) => {
+      this.addItem(item.label, item.percent)
+    })
   }
 
+  addItem(label, percent) {
+    const item = new Item(label, percent, this.idCounter)
+    this.__list = this.__list.concat(item)
+    this.idCounter++
+  }
+
+  deleteItem(id) {
+    this.__list = this.__list.filter(item => item.id!==id)
+  }
 
   changeLabel(id, label) {
-    this.list.map((item)=>{
+    this.__list.map((item)=>{
       if(item.id===id) {
         item.label = label
       }
       return item
     })
-    // this.updateLocalBin()
   }
 
   changePercent(id, percent) {
-    this.list.map((item)=>{
+    this.__list.map((item)=>{
       if(item.id===id) {
         item.percent = percent
       }
       return item
     })
-    // this.updateLocalBin()
   }
 
-  createList(list) {
-    list.forEach((item) => {
-      this.createItem(item.label, item.percent)
+
+
+
+  randomize() {
+    const label = []
+    const percent100 = []
+    this.__list.forEach(item=>{
+      percent100.push(item.percent100)
+      label.push(item.label)
     })
+
+    const weightedResult = weighted.select(label, percent100)
+    const item = this.__list.find(item=>item.label === weightedResult)
+    this.results.push(item)
+    this.showResults = true
   }
-
-  updateLocalBin() {
-    LocalBin.list = this.list
-  }
-
-
-
 }
 
 
 
 export default Store
-
-// class Todo {
-//   @observable value
-//   @observable id
-//   @observable complete
-
-//   constructor(value) {
-//     this.value = value
-//     this.id = Date.now()
-//     this.complete = false
-//   }
-// }
-
-// export class TodoStore {
-//   @observable todos = []
-  // @observable filter = ""
-  // @computed get filteredTodos() {
-  //   console.log(this.todos);
-  //   this.list = []
-  //   var matchesFilter = new RegExp(this.filter, "i")
-  //   return this.todos.filter(todo => !this.filter || matchesFilter.test(todo.value))
-  // }
-
-
-
-  // createTodo(value) {
-  //   this.todos.push(new Todo(value))
-  // }
-
-  // clearComplete = ()=> {
-  //   const incompleteTodos = this.todos.filter(todo => !todo.complete)
-  //   this.todos.replace(incompleteTodos)
-  // }
-// }
-
-// export default new TodoStore
-

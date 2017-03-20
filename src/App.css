@@ -1,28 +1,3 @@
-@value colors: "./common/colors.css";
-@value raw_color from colors;
-
 .main {
-  margin: 0 auto;
-  display: flex;
-}
-
-.rawData{
-	background-color: rgb(18, 22, 27);
-	position: relative;
-	z-index: 1;
-	height: 100vh;
-	flex-basis: 600px;
-	/*padding: 60px 10px;*/
-	color: raw_color;
-}
-
-.viz {
-	position: relative;
-	width: 100%;
-	height: 100vh;
-	top: 0;
-}
-
-.randomize {
 
 }

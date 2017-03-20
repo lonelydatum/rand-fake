@@ -1,0 +1,28 @@
+.main {
+	opacity: 1;
+}
+
+ul {
+	display: flex;
+
+}
+
+.main li {
+	border: 1px solid aqua;
+	width: 150px;
+	height: 150px;
+	flex: 0 0 auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+}
+
+.main li:hover {
+	background-color: grey;
+}
+
+.main-collapse {
+	composes: main;
+	opacity: .3;
+}

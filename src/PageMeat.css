@@ -1,0 +1,40 @@
+@value big from './breakpoints.css';
+@value colors: "./common/colors.css";
+@value raw_color from colors;
+
+.main {
+  display: block;
+}
+
+.rawData{
+	background-color: rgb(18, 22, 27);
+	position: relative;
+	z-index: 1;
+	height: 100vh;
+	flex-basis: 500px;
+	color: raw_color;
+}
+
+
+.buttonRandomize {
+	display: none;
+}
+.buttonNext {
+	margin-top: 10px;
+	display: block;
+}
+
+
+@media big {
+  	.main {
+    	display: flex;
+  	}
+
+
+	.buttonRandomize {
+		display: block;
+	}
+	.buttonNext {
+		display: none;
+	}
+}

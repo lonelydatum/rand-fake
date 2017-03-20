@@ -1,0 +1,54 @@
+@value triangleHeight: 8px;
+@value triangleWidth: 20px;
+@value triangleLeft: 50%;
+
+.main
+{
+	position: absolute;
+	width: 150px;
+	height: 40px;
+	padding: 0px;
+	background: #FFFFFF;
+	-webkit-border-radius: 0px;
+	-moz-border-radius: 0px;
+	border-radius: 0px;
+	border: #FFFF74 solid 2px;
+	color: red;
+	left: 11px;
+	top: 18px;
+	/*text-align: center;*/
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 14px;
+}
+
+.main:after
+{
+	content: '';
+	position: absolute;
+	border-style: solid;
+	border-width: triangleHeight triangleWidth 0;
+	border-color: #FFFFFF transparent;
+	display: block;
+	width: 0;
+	z-index: 1;
+	margin-left: -21px;
+	bottom: calc(triangleHeight * -1);
+	left: triangleLeft;
+}
+
+.main:before
+{
+	content: '';
+	position: absolute;
+	border-style: solid;
+	border-width: calc(triangleHeight + 1px) calc(triangleWidth + 1px) 0;
+	border-color: #FFFF74 transparent;
+	display: block;
+	width: 0;
+	z-index: 0;
+	margin-left: -22px;
+	bottom: calc((triangleHeight + 2px) * -1);
+	left: triangleLeft;
+}
