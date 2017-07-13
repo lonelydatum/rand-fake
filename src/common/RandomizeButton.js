@@ -1,6 +1,5 @@
 import React, { Component, PropTypes } from 'react';
 import styles from './RadomizeButton.css'
-import { inject, observer } from 'mobx-react'
 import {TimelineMax, Linear} from 'gsap'
 
 

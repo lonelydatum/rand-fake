@@ -17,6 +17,7 @@ class Item {
 }
 
 
+
 class Store {
   @observable __list = []
   @observable editId = -1
@@ -46,6 +47,7 @@ class Store {
   }
 
   set viz(value) {
+    console.log(value);
     this.__viz = value
   }
 

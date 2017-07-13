@@ -82,7 +82,7 @@ svg {
   	opacity: 1;
   	transform: translateX(0px);
   	transition: 500ms;
-	transition-delay: 2s;
+	transition-delay: 1.4s;
 }
 
 .leave {

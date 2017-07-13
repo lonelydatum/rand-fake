@@ -1,9 +1,9 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import {inject, observer} from 'mobx-react'
 import {autorun} from 'mobx'
 import styles from './Oscar.css'
-import {TweenMax, TimelineMax} from 'gsap'
+import {TimelineMax} from 'gsap'
 import OscarResults from './OscarResults.js'
 
 
@@ -33,7 +33,7 @@ class Oscar extends React.Component {
   		for(let i=1;i<=this.total;i++) {
   			const url = `images/oscar/oscar${i}.png`
   			const cssFrame = this.state.showFrameIndex===i ? styles.frameShow : styles.frame
-  			images.push(<img key={i} className={cssFrame} src={url} />)
+  			images.push(<img key={i} className={cssFrame} src={url} alt="oscar" />)
 
   		}
   		return images
@@ -52,9 +52,7 @@ class Oscar extends React.Component {
 
   	render() {
 
-  		const {list, showResults} = this.props.store
-
-  		// console.log(list);
+  		const {showResults} = this.props.store
 
 		return (
 	  		<div className={styles.main}>

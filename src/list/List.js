@@ -14,7 +14,6 @@ import styles from './List.css'
 export default class List extends Component {
 
 	createList(list) {
-
 	    return list.reverse().map((item)=> {
 	    	return <Item key={item.id} data={item}/>
 	    })
@@ -24,7 +23,6 @@ export default class List extends Component {
 		const {list} = this.props.store
 		return (
 			<div className={styles.main}>
-
 			<ReactCSSTransitionGroup transitionName={styles} transitionEnterTimeout={400} transitionLeaveTimeout={0}>
 				{ this.createList(list) }
 			</ReactCSSTransitionGroup>

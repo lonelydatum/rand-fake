@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react';
 import { inject, observer } from "mobx-react"
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 import styles from './App.css'
 import PageMeat from './PageMeat.js'
@@ -23,12 +24,16 @@ class App extends React.Component {
 
 
   	render() {
-  		const page = this.props.store.viz ? this.createPageMeat() : this.createPageAbout()
-
+  		const page = this.props.store.viz!==null ? this.createPageMeat() : this.createPageAbout()
+  		console.log(page);
 		return (
         <div className={styles.main}>
-            {page}
-            <Menu/>
+
+            	{page}
+
+
+            	<Menu/>
+
         </div>
 		);
   	}

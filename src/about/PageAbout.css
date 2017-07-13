@@ -1,8 +1,18 @@
 .main {
 	padding: 20px;
+	/*min-height: 100vh;*/
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+}
+
+.main section{
+	max-width: 800px;
 }
 
 .main h1 {
-	font-size: 22px;
+	font-size: 30px;
 	font-weight: 900;
+	line-height: 40px;
 }

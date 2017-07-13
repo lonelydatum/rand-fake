@@ -20,10 +20,7 @@ class PageMeat extends React.Component {
         this.props.store.list.length
         /* eslint-enable */
         this.refs.randomizeButton.tween()
-
       })
-
-      console.log(this.refs.randomizeButton.tween);
     }
 
   	onNext() {

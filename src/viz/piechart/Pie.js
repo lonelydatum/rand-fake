@@ -45,7 +45,7 @@ class Pie extends Component {
 
 	render() {
 
-		const {list, latestResult, results, showResults} = this.props.store
+		const {list, results, showResults} = this.props.store
 
 		/* eslint-disable */
       	results.length

@@ -10,19 +10,14 @@ export default class PageAbout extends Component {
 		return (
 			<div className={styles.main}>
 				<section>
-					<h1>Do you suck at making decisions? </h1>
-					<h1>And then get blamed for it?</h1>
-					<h1>Use Randomize to make easy, mundane, trivial decisions and blame it on us if things go wrong.</h1>
+					<h1>You are an important person who makes BIG decisions at the shop and at home. Relax and let Randomiz.me handle your next descision.</h1>
+
 
 				</section>
-				<div>
-					<p>
-						There are a bunch fun ways to randomize your options.
-					</p>
 
-				</div>
 			</div>
 		);
 	}
 }
+
 // <RandomizeButton didClick={this.didClick.bind(this)}>START</RandomizeButton>

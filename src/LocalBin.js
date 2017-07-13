@@ -11,6 +11,9 @@ class LocalBin {
 	addStore(store) {
 		autorun(()=>{
 			this.list = store.list
+		})
+
+		autorun(()=>{
 			this.viz = store.viz
 		})
 	}
@@ -29,7 +32,12 @@ class LocalBin {
 	}
 
 	set viz(v) {
-		localStorage.setItem("viz", v)
+		if(v){
+			localStorage.setItem("viz", v)
+		}else{
+			return
+		}
+
 	}
 
 

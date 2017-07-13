@@ -1,4 +1,4 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
 import {inject, observer} from 'mobx-react'
 import styles from './OscarResults.css'
 import CloseViz from '../common/CloseViz.js'
@@ -6,9 +6,7 @@ import CloseViz from '../common/CloseViz.js'
 
 @inject('store') @observer
 class OscarResults extends React.Component {
-  	constructor(props) {
-		super(props);
-  	}
+
 
   	 didClick() {
       this.props.store.showResults = false
@@ -20,11 +18,11 @@ class OscarResults extends React.Component {
 
   		const css = {backgroundImage:`url(oscar-card.jpg)`}
 
-  		const sizeResult = 175
+  		// const sizeResult = 175
   		const sizeCard = 620
-  		const ratio = sizeResult / sizeCard
+  		// const ratio = sizeResult / sizeCard
 
-  		const newSizeResult = window.innerWidth * ratio
+  		// const newSizeResult = window.innerWidth * ratio
   		const scale = window.innerWidth / sizeCard
   		console.log(scale);
 
@@ -42,11 +40,6 @@ class OscarResults extends React.Component {
 
 }
 
-
-
-OscarResults.propTypes = {
-
-};
 
 
 export default OscarResults;

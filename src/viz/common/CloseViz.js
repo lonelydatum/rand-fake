@@ -1,4 +1,4 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
 import { inject, observer } from "mobx-react"
 import styles from './CloseViz.css'
 
@@ -14,7 +14,6 @@ class CloseViz extends React.Component {
 
   	didKeyDown(e) {
 	    if (e.which === 27) {
-	    	console.log(e.which);
 	        document.removeEventListener("keydown", this.didKeyDown, false)
 	        this.props.store.showResults = false
 	    }
